@@ -1,4 +1,4 @@
-<html>
+﻿<html>
  <head>
   <title>WEB-site of the Syromyatnikov D. BD "Apteka"</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -16,9 +16,11 @@
 	// Выполняем SQL-запрос
 	$SQLquery = 'SELECT * FROM Sales';
 	$SQLresult = mysqli_query($link,$SQLquery);
+	printf("operation number, number of part, date, total price");
 	while ($result = mysqli_fetch_array($SQLresult,MYSQLI_NUM))
 	{
-		printf($result[1],$result[2],$result[5],$result[6]);
+		printf('<p> %d,%d, %s, %d </p>',$result[0],$result[1],$result[2],$result[3]);
+		
 	}
 	// Освобождаем память от результата
 	mysqli_free_result($SQLresult);
@@ -29,7 +31,7 @@
 			  <form action="add_sales_form_action.php" method="post">
           		  	Part: <input type="number" name="part">
           		  	<br>
-				Date: <input type="text" name="date_sales">
+				Date: <input type="date('j-m-y')" name="date_sales">
           		  	<br>
 				Total_Price: 
 					<input type="number" name="total_price">

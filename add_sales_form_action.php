@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 include('config.php');	
 $link = mysqli_connect($server, $user, $password, $database)
 	or die('Error: Unable to connect: ' . mysqli_connect_error());
@@ -13,7 +13,7 @@ $price = mysqli_real_escape_string($link, $_POST['total_price']);
 echo $part;
 echo $date;
 echo $price;
-$SQLquery = "INSERT INTO Sales (part, date_sales, total_price) VALUES ( $part,'$date',$price)";
+$SQLquery = "INSERT INTO Sales (part, date_sales, total_price) VALUES ( $part,$date,$price)";
 echo '<BR> SQL query: ';
 echo $SQLquery;
 
