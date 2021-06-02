@@ -1,7 +1,7 @@
 cd ..
 echo Глобальная настройка переменных, достаточно выполнить 1 раз
-echo git config --global user.name NEFUstudent
-echo git config --global user.email study.svfu@gmail.com
+echo git config --global user.name djizent
+echo git config --global user.email dizent22@gmail.com
 echo Добавим трекинг всех новых файлов
 git add -A
 echo Коммит всех локальных изменений, не забываем в комментарии указывать суть внесенных изменений

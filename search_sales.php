@@ -8,9 +8,9 @@
 <P>Search on date:</P>
 			  <form action="Search.php" method="post">
           		  	
-				Date: <input type="date('j-m-y')" name="date_sales">
+				Date: <input type="date" name="date_sales">
 
-            		  	<input type="submit" value="Add Sales">
+            		  	<input type="submit" value="search">
       			  </form>
 
 
@@ -18,7 +18,7 @@
 
 
 <BR>
-<a href="index.html"> <P>GO BACK</P> </a>
+<a href="index.html"> <P>GO TO MAIN</P> </a>
 
  </body>
 </html>

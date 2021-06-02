@@ -16,10 +16,10 @@
 	// Выполняем SQL-запрос
 	$SQLquery = 'SELECT * FROM Sales';
 	$SQLresult = mysqli_query($link,$SQLquery);
-	printf("number of part, date, total price");
+	printf("operation number, number of part, date, total price");
 	while ($result = mysqli_fetch_array($SQLresult,MYSQLI_NUM))
 	{
-		printf('<p> %d,%s, %d </p>',$result[0],$result[1],$result[2]);
+		printf('<p> %d, %date(y-m-d), %d </p>',$result[0],$result[1],$result[2]);
 		
 	}
 	// Освобождаем память от результата
@@ -29,7 +29,9 @@
 ?>
 <P>Add New Sales:</P>
 			  <form action="add_sales_form_action.php" method="post">
-				Date: <input type="date" name="date_sales">
+          		  	Part: <input type="number" name="part">
+          		  	<br>
+				Date: <input type="text" name="date_sales">
           		  	<br>
 				Total_Price: 
 					<input type="number" name="total_price">

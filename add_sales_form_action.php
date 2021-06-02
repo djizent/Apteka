@@ -13,7 +13,7 @@ $price = mysqli_real_escape_string($link, $_POST['total_price']);
 echo $part;
 echo $date;
 echo $price;
-$SQLquery = "INSERT INTO Sales (part, date_sales, total_price) VALUES ( $part,$date,$price)";
+$SQLquery = "INSERT INTO Sales (date_sale, total_price) VALUES ('$date',$price)";
 echo '<BR> SQL query: ';
 echo $SQLquery;
 
@@ -25,5 +25,6 @@ if (mysqli_query($link, $SQLquery)) {
 
 mysqli_close($link);
 
-printf('<a href="index.html"> <P>GO BACK</P> </a>');
+printf('<a href="sales.php"> <P>GO BACK</P> </a>');
+
 ?>
