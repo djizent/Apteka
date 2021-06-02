@@ -28,7 +28,7 @@
         }
         // Освобождаем память от результата
         mysqli_free_result($SQLresult);
-        mysqli_close($link);
+      
 
 ?>
 <P>Add New Medicines:</P>
@@ -44,8 +44,24 @@
 								pic:
                                         <input type="number" name="pic">
                                 <br>
-								generic:
-                                        <input type="number" name="generic">
+					generic:
+                                <select name="generic">
+			<?php 
+			
+				$SQLquery = "SELECT `group` , CONCAT( `group`, '. ', `description`) FROM Generics";
+				$SQLresult = mysqli_query($link,$SQLquery);
+				while ($result1 = mysqli_fetch_array($SQLresult,MYSQLI_NUM))
+				{
+					printf('<option value=%d>%s</option>',$result1[0],$result1[1]);
+				}
+				mysqli_free_result($SQLresult);
+				mysqli_close($link);
+			?>
+		</select>                                                       
+
+
+
+                                        
                                 <br>
 								the_price_for_one:
                                         <input type="number" name="the_price_for_one">

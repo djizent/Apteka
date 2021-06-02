@@ -28,17 +28,41 @@
         }
         // Освобождаем память от результата
         mysqli_free_result($SQLresult);
-        mysqli_close($link);
 
 ?>
 <P>Add New Sales:</P>
                           <form action="add_supplys_form_action.php" method="post">
-                                medicine: <input type="number" name="medicine">
+		medicine: <select name="medicine">
+			<?php 
+			
+				$SQLquery = "SELECT id_m, name FROM Medicines";
+				$SQLresult = mysqli_query($link,$SQLquery);
+				while ($result1 = mysqli_fetch_array($SQLresult,MYSQLI_NUM))
+				{
+					printf('<option value=%d>%s</option>',$result1[0],$result1[1]);
+				}
+				mysqli_free_result($SQLresult);
+			
+			?>
+		</select>
+
+                                
                                 <br>
-                                number_part:
-                                        <input type="number" name="number_part">
-                                <br>
-									quantity:
+                number_part:   <select name="number_part">
+			<?php 
+			
+				$SQLquery = "SELECT part, CONCAT(part, '. ', date_sale) FROM Sales";
+				$SQLresult = mysqli_query($link,$SQLquery);
+				while ($result1 = mysqli_fetch_array($SQLresult,MYSQLI_NUM))
+				{
+					printf('<option value=%d>%s</option>',$result1[0],$result1[1]);
+				}
+				mysqli_free_result($SQLresult);
+				mysqli_close($link);
+			?>
+		</select> 
+                <br>					
+                        quantity:
                                         <input type="number" name="quantity">
                                 <br>
 								
