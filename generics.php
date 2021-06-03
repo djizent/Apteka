@@ -1,11 +1,15 @@
 <html>
  <head>
+ <link rel = "stylesheet" href = "style.css">
   <title>Generics BD "Apteka"</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
  </head>
- <body>
+ <rr><body bgcolor="#228B22" >
+         <table width="100%" cellspacing="3" border="4" style="font-size:32px;">
+      <rr>  <TR>
+	        <TD align="center">
         <?php
-        printf('<P>Hello world! Searching for Medicines in apteka:</P>');
+        printf('<P>Hello world! Searching for Generics in apteka:</P>');
         // Соединяемся, выбираем базу данных VER3
 
         include('config.php');
@@ -39,6 +43,10 @@
                                 <br>
                                 <input type="submit" value="Add description">
                           </form>
-<BR>
+                         
+<BR> </rr>
+</TD></TR></table>
 <a href="index.html"> <P>GO BACK</P> </a>
 
+</body></rr>
+</html>

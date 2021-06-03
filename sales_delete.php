@@ -14,17 +14,18 @@
         $link = mysqli_connect($server, $user, $password, $database)
             or die('Error: Unable to connect: ' . mysqli_connect_error());
         echo '<P>Succesfully connected!</P>';
-	$date=mysqli_real_escape_string($link, $_POST['date_sales']);
+	$ee=mysqli_real_escape_string($link, $_POST['part']);
         // Выполняем SQL-запрос
-        $SQLquery = 'SELECT * FROM Sales';
-        $SQLresult = mysqli_query($link,$SQLquery);
-        printf("number of part, date, total price");
-        while ($result = mysqli_fetch_array($SQLresult,MYSQLI_NUM))
-       	{
-		if ($result[1]=="$date"){
-                printf('<p> %d,%s, %d </p>',$result[0],$result[1],$result[2]);
-		}
-        }
+        $SQLquery = "DELETE FROM Sales WHERE part= $ee";
+echo '<BR> SQL query: ';
+echo $SQLquery;
+
+if (mysqli_query($link, $SQLquery)) {
+    echo "<BR>Record deleted successfully";
+} else {
+    echo "<BR>Error: " . $sql . "<br>" . mysqli_error($link);
+}
+      
         // Освобождаем память от результата
         mysqli_free_result($SQLresult);
         mysqli_close($link);
@@ -32,8 +33,7 @@
 ?>
 
 <BR>
-<a href="index.html"> <P>GO BACK</P> </a>
+<a href="sales.php"> <P>GO BACK</P> </a>
 
  </body>
 </html>
-

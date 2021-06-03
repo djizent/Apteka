@@ -1,9 +1,13 @@
  <html>
  <head>
+ <link rel = "stylesheet" href = "style.css">
   <title>Supplys BD "Apteka"</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
  </head>
  <body>
+         <table width="100%" cellspacing="3" border="4" style="font-size:32px;">
+        <TR>
+	        <TD align="center">
         <?php
         printf('<P>Hello world! Searching for Medicines in apteka:</P>');
         // Соединяемся, выбираем базу данных VER3
@@ -69,6 +73,7 @@
                                 <br>
                                 <input type="submit" value="Add Supplys">
                           </form>
+         </TD></TR></table>
 <BR>
 <a href="index.html"> <P>GO BACK</P> </a>
 
