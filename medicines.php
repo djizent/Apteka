@@ -7,7 +7,7 @@
  <body>
         <table width="100%" cellspacing="3" border="4" style="font-size:32px;">
         <TR>
-	        <TD align="center">
+	        <TD align="center" colspan="3">
         <?php
         printf('<P>Hello world! Searching for Medicines in apteka:</P>');
         // Соединяемся, выбираем базу данных VER3
@@ -34,7 +34,8 @@
         mysqli_free_result($SQLresult);
       
 
-?>
+?></TR>
+<TR><TD>
 <P>Add New Medicines:</P>
                           <form action="add_medicines_form_action.php" method="post">
                                 name: <input type="text" name="name">
@@ -81,9 +82,57 @@
                                 <input type="submit" value="Add medicines">
                           </form>
 <BR>
-</TD></TR></table>
-<a href="index.html"> <P>GO BACK</P> </a>
+
+
+</TD>
+			<TD align="center">
+				<P>Search on name:</P>
+			  <form action="search_m.php" method="post">
+          		  	
+				Name: <input type="text" name="name">
+
+            		  	<input type="submit" value="search">
+      			  </form>
+
+				<BR>
+
+				
+				</TD>
+				<TD align="center">
+				<P>Delete</P>
+			  <form action="sales_delete.php" method="post">
+          		  	
+			  sales:
+                                <select name="part">
+			<?php 
+			
+				$SQLquery = "SELECT `part` , CONCAT( `part`, '. ', `date_sale`, '. ', total_price) FROM Sales";
+				$SQLresult = mysqli_query($link,$SQLquery);
+				while ($result1 = mysqli_fetch_array($SQLresult,MYSQLI_NUM))
+				{
+					printf('<option value=%d>%s</option>',$result1[0],$result1[1]);
+				}
+				mysqli_free_result($SQLresult);
+				mysqli_close($link);
+			?>
+		</select>    
+
+            		  	<input type="submit" value="delete">
+      			  </form>
+
+				<BR>
+
+				</TD>
+			
+			
+			
+			
+			</TR></table>
+
+<BR> 
+<a style="font-size:25px;" align="center" href="index.html"> <P>GO BACK</P> </a>
 
  </body>
 </html>
+
 
