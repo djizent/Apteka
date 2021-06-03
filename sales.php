@@ -1,13 +1,13 @@
 ﻿<html>
  <head>
  <link rel = "stylesheet" href = "style.css">
-  <title>WEB-site of the Syromyatnikov D. BD "Apteka"</title>
+  <title>WEB-site of BD "Apteka" </title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
  </head>
  <body link="red" vlink="white">
  <table width="100%" cellspacing="3" border="4" style="font-size:32px;">
         <TR>
-	        <TD align="center" colspan="3">
+	        <TD align="center" colspan="4">
 	<?php
 	printf('<P>Hello world! Searching for Sales of medicines:</P>');
 	// Соединяемся, выбираем базу данных VER3
@@ -76,7 +76,7 @@
 					printf('<option value=%d>%s</option>',$result1[0],$result1[1]);
 				}
 				mysqli_free_result($SQLresult);
-				mysqli_close($link);
+		
 			?>
 		</select>    
 
@@ -86,7 +86,26 @@
 				<BR>
 
 				</TD>
+			<TD>
+			<form action="update_action.php" method="post">
+		UPDATE:<select name="id">
+			<?php 
 			
+					$SQLquery = "SELECT `part` , CONCAT( `part`, '. ', `date_sale`, '. ', total_price) FROM Sales";
+					$SQLresult = mysqli_query($link,$SQLquery);
+					while ($result1 = mysqli_fetch_array($SQLresult,MYSQLI_NUM))
+					{
+						printf('<option value=%d>%s</option>',$result1[0],$result1[1]);
+					}
+				mysqli_free_result($SQLresult);
+				mysqli_close($link);
+			?>
+		</select>
+		<input type="submit" value="Выбрать">
+	</form>		
+
+
+			</TD>
 			
 			
 			

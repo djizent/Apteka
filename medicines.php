@@ -1,7 +1,7 @@
 <html>
 <head>
 <link rel = "stylesheet" href = "style.css">
-  <title>WEB-site of the Syromyatnikov D. BD "Apteka"</title>
+  <title>WEB-site of BD "Apteka" </title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
  </head>
  <body>
