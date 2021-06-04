@@ -4,7 +4,7 @@
   <title>Generics BD "Apteka"</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
  </head>
- <rr><body bgcolor="#228B22" >
+ <rr><body bgcolor="#228B22" link="red" vlink="white" >
          <table width="100%" cellspacing="3" border="4" style="font-size:32px;">
       <rr>  <TR>
 	        <TD align="center">

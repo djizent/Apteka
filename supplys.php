@@ -4,7 +4,7 @@
   <title>Supplys BD "Apteka"</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
  </head>
- <body>
+ <body link="red" vlink="white">
          <table width="100%" cellspacing="3" border="4" style="font-size:32px;">
         <TR>
 	        <TD align="center">
