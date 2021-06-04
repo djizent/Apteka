@@ -1,18 +1,41 @@
 body{
 
-  background-image: url(apteki.jpg);
+  background-image: url(images/apteki.jpg);
 
 }
-table{
-
-  background-image: url(fon.jpg);
+div.main_menu
+{
+  background-image: url(images/fon.jpg);
   color: white;
+  font-size: 32px;
+  margin: auto;
+  width: 1200px;
+  text-align: center;
 }
-yy{
- 
-    background-image: url(apteki.jpg);
-  }
-  rr {
-    background-color: rgb(85, 85, 85);
-    background-image: url(fon.jpg);
-  }
+
+a.main_text
+{
+  color: white;
+  font-size:96px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+a
+{
+  text-decoration: none;
+}
+
+p
+{
+	cursor: pointer;
+  position:static;
+	line-height: 1; 
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  transition: width 1s ease-out;
+}
+
+p:hover
+{
+  text-decoration: underline;
+}
