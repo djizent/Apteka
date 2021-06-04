@@ -39,3 +39,9 @@ p:hover
 {
   text-decoration: underline;
 }
+
+table
+{
+  background-image: url(images/fon.jpg);
+  color:white;
+}
