@@ -22,7 +22,8 @@
         $SQLresult = mysqli_query($link,$SQLquery);
         printf("medicine,number_part,quantity");
 		
-		
+                
+        
 		
 		
         while ($result = mysqli_fetch_array($SQLresult,MYSQLI_NUM))
