@@ -75,7 +75,7 @@
                           </form>
          </TD></TR></table>
 <BR>
-<a href="index.html"> <P>GO BACK</P> </a>
+<a style="font-size:25px;" align="center" href="index.html"> <P>GO BACK</P> </a>
 
  </body>
 </html>

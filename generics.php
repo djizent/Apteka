@@ -46,7 +46,7 @@
                          
 <BR> </rr>
 </TD></TR></table>
-<a href="index.html"> <P>GO BACK</P> </a>
+<a style="font-size:25px;" align="center" href="index.html"> <P>GO BACK</P> </a>
 
 </body></rr>
 </html>
